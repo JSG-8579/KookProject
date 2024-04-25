@@ -4,7 +4,7 @@ import GoogleLogin from "@/components/service/GoogleLogin";
 import NaverLogin from "@/components/service/NaverLogin";
 import Link from "next/link";
 import {Nerko_One} from "next/font/google"; 
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 // import { useSession } from 'next-auth/react';
 
 const nerko = Nerko_One({
@@ -15,7 +15,7 @@ const nerko = Nerko_One({
 
 export default function Home() {
 
-  const router:any = useRouter();
+  // const router:any = useRouter();
   // const { data: session, status }: any = useSession();
 
     // if (session) {
