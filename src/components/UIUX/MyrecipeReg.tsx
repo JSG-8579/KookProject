@@ -40,13 +40,15 @@ function MyrecipeReg({ myRecipe,session,dataCrl }: any) {
             return imgUrl;
         },
         delImage: (id: any, urls: any) => {
+            console.log(urls, 'urls')
 
             urls.forEach((url: any) => {
                 if (url) {
                     const start = url.lastIndexOf('%2F') + 3; //url 뒤 부터 %2f부분의 인덱스값 
                     const end = url.lastIndexOf('?');
                     const str = url.substring(start, end);
-                    deleteObject(ref(storage, `/${session.user.email}/${id}/${str}`))
+                    console.log(str, 'str')
+                    deleteObject(ref(storage, `/${session.user.id}/${id}/${str}`))
                 }
             })
             // const url = 'https://firebasestorage.googleapis.com/v0/b/kookkook-99003.appspot.com/o/jsg8733%40gmail.com%2F1709775110201%2Ftest_img1.jpg?alt=media&token=101ccc9a-e67b-45fc-b4ea-a8993bc22527'
@@ -56,6 +58,7 @@ function MyrecipeReg({ myRecipe,session,dataCrl }: any) {
 
     //삭제 버튼
     let delRecipe = () => {
+        console.log(eldelrecipe.current, 'sad')
 
         let vlfxj = myRecipe.filter((obj: any) => eldelrecipe.current == obj.seq)
         let selectRecipe = vlfxj[0].seq
@@ -77,10 +80,10 @@ function MyrecipeReg({ myRecipe,session,dataCrl }: any) {
 
 
 
-
+        dataCrl('delete', selectRecipe, '')
         firebase.delImage(selectRecipe, aaaaa)
         // return;
-        dataCrl('delete', selectRecipe, '')
+        
 
         setDelRePop(false)
 
