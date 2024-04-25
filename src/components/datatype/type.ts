@@ -28,7 +28,7 @@ export type initTy2 = {
     top?:string;
     like?:number;
     user?:string|null;
-    $and?:{seq?:string; user?:string|null}[];
+    $and?:{seq?:string; user_id?:string|null}[];
 
 }
 export type initTy3 = {
@@ -59,7 +59,7 @@ export type initTy4 = {
     top?:string;
     like?:number;
     user?:string|null;
-    $and?:{seq?:string; user?:string|null}[];
+    $and?:{seq?:string; user_id?:string|null}[];
 
 
 }

@@ -9,6 +9,7 @@ export const test2 = async (type?: string, body?: initTy2) => {
     let db, collection, data2
     db = client.db('Kookproject')
     collection = db.collection('bookmark')
+    console.log(body,'----')
     
     
     switch (type) {
@@ -21,6 +22,7 @@ export const test2 = async (type?: string, body?: initTy2) => {
                 break;
                 
                 case "delete":
+                    // data2 = await collection.deleteOne(body);
                     data2 = await collection.deleteOne(body);
                     break;
                     
