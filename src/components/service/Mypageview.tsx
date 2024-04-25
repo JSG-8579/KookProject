@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Comment from '../UIUX/Comment';
-import Viewrecipe from '../UIUX/Viewrecipe';
+// import Viewrecipe from '../UIUX/Viewrecipe';
 import { useStore } from '../recipe_store/all_store';
 import { useStore2 } from '../recipe_store/bookmark_store';
 import { useStore4 } from '../recipe_store/comment_store';
@@ -42,9 +42,9 @@ function Mypageview({ idx, session, dataCrl}: any) {
             comp = <Comment data4={data4} session={session} myComment={myComment} />
             break;
 
-        case "내가 본 레시피":
-            comp = <Viewrecipe myLike={myLike} data={data}/>
-            break;
+        // case "내가 본 레시피":
+        //     comp = <Viewrecipe myLike={myLike} data={data}/>
+        //     break;
 
 
         default:

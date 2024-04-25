@@ -22,7 +22,7 @@ function RecipeList({idx,detailUrl,selectName,sortCate,setFameImg}:any) {
     const { data: session, status }: any = useSession();
     let allData = recipe.filter((obj:any)=>obj.m_cate==sortCate);
     let likeData = recipe.sort((a:any, b:any) => a.like - b.like);
-    let recipeSort = allData.slice(0,10);
+    let recipeSort = allData.slice(0,20);
 
     // console.log(recipeSort,'----33')
 
@@ -44,7 +44,7 @@ function RecipeList({idx,detailUrl,selectName,sortCate,setFameImg}:any) {
     let comp;
     switch (idx) {
         case "가로":
-            comp=<RecipeWid selectName={selectName} dataID={allData} dataCrl={dataCrl} data4={data4}/>
+            comp=<RecipeWid selectName={selectName} dataID={recipeSort} dataCrl={dataCrl} data4={data4}/>
             break;
         case "정사각형":
             comp=<RecipeSq dataID={likeData} dataCrl={dataCrl} />

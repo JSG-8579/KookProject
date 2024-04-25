@@ -7,14 +7,14 @@ import { useStore5 } from '../recipe_store/like_store';
 
 function FuncLike({ obj }: any) {
 
-    let num = Math.floor(obj.like)
+    // let num = Math.floor(obj.like)
 
     const { data5, dataCrl5 } = useStore5()
 
     const { data: session, status }: any = useSession();
 
     const [isLike, setIsLike] = useState(false);
-    const [pluslike, setPluslike] = useState(num);
+    // const [pluslike, setPluslike] = useState(num);
     const { dataCrl, data } = useStore()
 
     const changeLike = (aa:any) => {
@@ -36,25 +36,25 @@ function FuncLike({ obj }: any) {
                 "user_id": `${session.user.id}`,
                 "m_thumb": `${likeOne.m_thumb}`,
                 "tip": `${likeOne.tip}`,
-                "like": likeOne.like+1
+                // "like": likeOne.like+1
             }
 
  
-            let putupLike = {
-                "like": Number(likeOne.like) +1
-            }
+            // let putupLike = {
+            //     "like": Number(likeOne.like) +1
+            // }
 
             dataCrl5("insert",'', bookmarkData)
-            dataCrl5("put",likeOne.seq, putupLike)
-            dataCrl("put",likeOne.seq, putupLike)
+            // dataCrl5("put",likeOne.seq, putupLike)
+            // dataCrl("put",likeOne.seq, putupLike)
         } else {
 
-            let putdownLike = {
-                "like": Number(likeOne.like) - 1
-            }
+            // let putdownLike = {
+            //     "like": Number(likeOne.like) - 1
+            // }
             dataCrl5("delete", likeOne.seq, '')
-            dataCrl5("put", likeOne.seq, putdownLike)
-            dataCrl("put", likeOne.seq, putdownLike)
+            // dataCrl5("put", likeOne.seq, putdownLike)
+            // dataCrl("put", likeOne.seq, putdownLike)
             
         }
 
@@ -72,7 +72,7 @@ function FuncLike({ obj }: any) {
         }else{
             setIsLike(false)
         }
-        setPluslike(like);
+        // setPluslike(like);
     }, [obj])
 
     // useEffect(() => {
@@ -84,7 +84,7 @@ function FuncLike({ obj }: any) {
         <span className="like">
             <button onClick={()=>{changeLike(obj)}}>
                 <img src={isLike ? "/images/heart_red.png" : "/images/heart_black.png"} alt="heart" />
-                {pluslike >= 99 ? '+' + 99 : pluslike}
+                {/* {pluslike >= 99 ? '+' + 99 : pluslike} */}
             </button>
         </span>
     );
