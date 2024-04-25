@@ -17,14 +17,10 @@ function FuncLike({ obj }: any) {
     // const [pluslike, setPluslike] = useState(num);
     const { dataCrl, data } = useStore()
 
-    const changeLike = (aa:any) => {
+    const changeLike = () => {
 
         let Dateid = Date.now()
         let likeOne = obj;
-        let aaa = data5.filter((obj:any)=> aa.seq==obj.seq)
-
-
-
         
         if (!isLike) {
             const bookmarkData = {
@@ -73,7 +69,7 @@ function FuncLike({ obj }: any) {
             setIsLike(false)
         }
         // setPluslike(like);
-    }, [obj])
+    }, [])
 
     // useEffect(() => {
     //     isLike ? setPluslike(pluslike + 1) : setPluslike(pluslike - 1);
@@ -82,7 +78,7 @@ function FuncLike({ obj }: any) {
 
     return (
         <span className="like">
-            <button onClick={()=>{changeLike(obj)}}>
+            <button onClick={()=>{changeLike()}}>
                 <img src={isLike ? "/images/heart_red.png" : "/images/heart_black.png"} alt="heart" />
                 {/* {pluslike >= 99 ? '+' + 99 : pluslike} */}
             </button>
