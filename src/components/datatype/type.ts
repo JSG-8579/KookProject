@@ -58,6 +58,8 @@ export type initTy4 = {
     m_thumb?:string;
     top?:string;
     like?:number;
+    user?:string|null;
+    $and?:{seq?:string; user?:string|null}[];
 
 
 }

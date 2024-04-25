@@ -27,7 +27,7 @@ export const useStore5 = create<Ty5>((set) => {
                 case "insert": res = await request1.post("/api/like", overData5);
                     break;
 
-                case "delete": res = await request1.delete(`/api/like/${id5[0]}`);
+                case "delete": res = await request1.delete(`/api/like/${id5.seq}?user=${id5.user_id}`);
                     break;
 
                 case "put": res = await axios.put(`/api/like/${id5}`, overData5);

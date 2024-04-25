@@ -9,8 +9,9 @@ export async function GET(req:Request, {params}:any){
 }
 
 
-export async function DELETE(req:Request, {params}:any){
-    const data4 = await test4('delete', {seq:params.user})
+export async function DELETE(req:NextRequest, {params}:any){
+    const user = req.nextUrl.searchParams.get('user')
+    const data4 = await test4('delete', {$and:[{seq:params.user},{user}]})
     return NextResponse.json(data4);
 }
 
