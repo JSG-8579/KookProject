@@ -22,7 +22,7 @@ function FuncScrap({ obj }: any) {
 
         let Dateid = Date.now()
         let bookmarkOne = obj;
-        let aaa = data2.filter((obj:any)=> aa.seq==obj.seq)
+        let aaa = data2.filter((obj:any)=> session.user.id==obj.user_id && obj.seq == aa.seq)
         
 
         if (!b_click) {
@@ -36,12 +36,16 @@ function FuncScrap({ obj }: any) {
                 "user_id": `${session.user.id}`,
                 "m_thumb": `${bookmarkOne.m_thumb}`,
                 "tip": `${bookmarkOne.tip}`,
-                "like": bookmarkOne.like
+                // "like": bookmarkOne.like
             }
 
             dataCrl2('insert', '', bookmarkData)
         }else {
-            dataCrl2('delete', aaa[0].id, '')
+            const ccc = {
+                'user_id': session.user.id,
+                'seq': aa.seq
+            }
+            dataCrl2('delete', ccc, '')
         }
 
         setB_click(!b_click)

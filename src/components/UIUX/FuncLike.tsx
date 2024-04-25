@@ -17,13 +17,19 @@ function FuncLike({ obj }: any) {
     // const [pluslike, setPluslike] = useState(num);
     const { dataCrl, data } = useStore()
 
-    const changeLike = () => {
+    const changeLike = (bb:any) => {
+
+        if(status === 'unauthenticated'){
+            alert('로그인이 필요한 서비스입니다.')
+            return
+        }
 
         let Dateid = Date.now()
         let likeOne = obj;
+        let bbb = data5.filter((obj:any)=> session.user.id==obj.user_id && obj.seq == bb.seq)
         
         if (!isLike) {
-            const bookmarkData = {
+            const likeData = {
                 "id": `${Dateid}`,
                 "seq": `${likeOne.seq}`,
                 "name": `${likeOne.name}`,
@@ -40,15 +46,19 @@ function FuncLike({ obj }: any) {
             //     "like": Number(likeOne.like) +1
             // }
 
-            dataCrl5("insert",'', bookmarkData)
+            dataCrl5("insert",'', likeData)
             // dataCrl5("put",likeOne.seq, putupLike)
             // dataCrl("put",likeOne.seq, putupLike)
         } else {
+            const ddd = {
+                'user_id': session.user.id,
+                'seq': bb.seq
+            }
 
             // let putdownLike = {
             //     "like": Number(likeOne.like) - 1
             // }
-            dataCrl5("delete", likeOne.seq, '')
+            dataCrl5("delete", ddd, '')
             // dataCrl5("put", likeOne.seq, putdownLike)
             // dataCrl("put", likeOne.seq, putdownLike)
             
@@ -78,7 +88,7 @@ function FuncLike({ obj }: any) {
 
     return (
         <span className="like">
-            <button onClick={()=>{changeLike()}}>
+            <button onClick={()=>{changeLike(obj)}}>
                 <img src={isLike ? "/images/heart_red.png" : "/images/heart_black.png"} alt="heart" />
                 {/* {pluslike >= 99 ? '+' + 99 : pluslike} */}
             </button>

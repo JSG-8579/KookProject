@@ -13,7 +13,7 @@ interface Ty2 {
 export const useStore2 = create<Ty2>((set) => {
     return {
         data2: [],
-        dataCrl2: async function (type2, id2=0, overData2=0) {
+        dataCrl2: async function (type2, id2, overData2) {
             let res2: any;
             switch (type2) {
                 case "all": res2 = await request1.get("/api/bookmark");
