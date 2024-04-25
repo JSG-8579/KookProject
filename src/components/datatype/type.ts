@@ -28,7 +28,7 @@ export type initTy2 = {
     top?:string;
     like?:number;
     user?:string|null;
-    $and?:{id?:string; user?:string|null}[];
+    $and?:{seq?:string; user?:string|null}[];
 
 }
 export type initTy3 = {
