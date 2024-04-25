@@ -27,7 +27,8 @@ export type initTy2 = {
     m_thumb?:string;
     top?:string;
     like?:number;
-
+    user?:string|null;
+    $and?:{id?:string; user?:string|null}[];
 
 }
 export type initTy3 = {
