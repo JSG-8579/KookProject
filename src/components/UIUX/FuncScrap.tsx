@@ -22,7 +22,7 @@ function FuncScrap({ obj }: any) {
 
         let Dateid = Date.now()
         let bookmarkOne = obj;
-        let aaa = data2.filter((obj:any)=> session.user.id==obj.user_id && obj.seq == aa.seq)
+    
         
 
         if (!b_click) {
