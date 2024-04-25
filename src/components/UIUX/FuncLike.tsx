@@ -13,7 +13,7 @@ function FuncLike({ obj }: any) {
 
     const { data: session, status }: any = useSession();
 
-    const [isLike, setIsLike] = useState(false);
+    let [isLike, setIsLike] = useState(false);
     // const [pluslike, setPluslike] = useState(num);
     const { dataCrl, data } = useStore()
 
@@ -26,7 +26,7 @@ function FuncLike({ obj }: any) {
 
         let Dateid = Date.now()
         let likeOne = obj;
-        let bbb = data5.filter((obj:any)=> session.user.id==obj.user_id && obj.seq == bb.seq)
+        
         
         if (!isLike) {
             const likeData = {

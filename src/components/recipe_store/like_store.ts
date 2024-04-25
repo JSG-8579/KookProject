@@ -7,7 +7,6 @@ const request1 = axios.create({
 })
 interface Ty5 {
     data5: any[];
-
     dataCrl5: (type5: string, id5: any, overdata5: any) => void;
 }
 

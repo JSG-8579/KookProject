@@ -11,7 +11,6 @@ export const test4 = async (type?: string, body?: initTy4) => {
     collection = db.collection('like')
 
     
-    
     switch (type) {
         case "post":
             await collection.insertOne(body);
