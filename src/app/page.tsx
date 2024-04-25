@@ -1,8 +1,9 @@
+
+import React, { useEffect } from 'react';
 import GoogleLogin from "@/components/service/GoogleLogin";
 import NaverLogin from "@/components/service/NaverLogin";
 import Link from "next/link";
 import {Nerko_One} from "next/font/google"; 
-import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
@@ -17,12 +18,9 @@ export default function Home() {
   const router:any = useRouter();
   const { data: session, status }: any = useSession();
 
-  useEffect(() => {
-
     if (session) {
       router.push('/home');
     }
-  }, []);
 
   return (
     <>
