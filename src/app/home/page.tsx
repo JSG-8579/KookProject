@@ -11,38 +11,40 @@ function Page() {
     const { data, cateName, category } = useStore()
 
     const idx = "가로"
-    let [cateName2, setCateName2] = useState('');
+    let [cateName2, setCateName2] = useState('RICE');
+    let [sortCate, setSortCate] = useState('밥')
+
     let [selectName, setSelectName] = useState('latest');
     let [fameImg, setFameImg] = useState<any>();
 
     
-    useEffect(() => {
-        if (data.length) {
-            const maxLike = data.reduce((max: number, obj: any) => {
-                const like = parseFloat(obj.like);
-                return like > max ? like : max;
-            }, 0);
-            const maxData = data.filter((obj: any) => obj.like == maxLike)
-            setFameImg(maxData[0].m_thumb);
-        }
-    }, [data])
+    // useEffect(() => {
+    //     if (data.length) {
+    //         const maxLike = data.reduce((max: number, obj: any) => {
+    //             const like = parseFloat(obj.like);
+    //             return like > max ? like : max;
+    //         }, 0);
+    //         const maxData = data.filter((obj: any) => obj.like == maxLike)
+    //         setFameImg(maxData[0].m_thumb);
+    //     }
+    // }, [data])
     
 
-    useEffect(() => {
-        if (cateName == "밥") {
-            setCateName2('RICE');
-        } else if (cateName == '국&찌개') {
-            setCateName2('SOUP')
-        } else if (cateName == '반찬') {
-            setCateName2('SIDE DISH')
-        } else if (cateName == '일품') {
-            setCateName2('SPECIAL')
-        } else if (cateName == '후식') {
-            setCateName2('DESSERT')
-        } else if (cateName == '기타') {
-            setCateName2('ETC')
-        }
-    }, [cateName])
+    // useEffect(() => {
+    //     if (cateName == "밥") {
+    //         setCateName2('RICE');
+    //     } else if (cateName == '국&찌개') {
+    //         setCateName2('SOUP')
+    //     } else if (cateName == '반찬') {
+    //         setCateName2('SIDE DISH')
+    //     } else if (cateName == '일품') {
+    //         setCateName2('SPECIAL')
+    //     } else if (cateName == '후식') {
+    //         setCateName2('DESSERT')
+    //     } else if (cateName == '기타') {
+    //         setCateName2('ETC')
+    //     }
+    // }, [cateName])
 
     const handleSelect = (e: any) => {
         setSelectName(e.target.value);
@@ -56,7 +58,7 @@ function Page() {
                     <p>오늘 뭐 먹지??</p>
                 </div>
             </Link>
-            <Button />
+            <Button setSortCate={setSortCate} setCateName2={setCateName2} setFameImg={setFameImg}/>
             <div className='fame'>
                 <p>명예의 전당</p>
                 <img src={fameImg} alt="" />
@@ -68,7 +70,7 @@ function Page() {
                     <option value="star">별점순</option>
                 </select>
             </div>
-            <RecipeList selectName={selectName} idx={idx} />
+            <RecipeList setFameImg={setFameImg} sortCate={sortCate} selectName={selectName} idx={idx} />
             <Topbutton/>
         </div>
     );

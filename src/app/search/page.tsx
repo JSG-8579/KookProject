@@ -9,8 +9,8 @@ import '../../components/style/search.scss';
 
 function Page() {
 
-    const idx = "정사각형";
-    const index = "가로";
+    const idx = "검정정사각형";
+    const index = "검색가로";
     const searchParams = useSearchParams()
     const searchQuery = searchParams && searchParams.get("q");
 
