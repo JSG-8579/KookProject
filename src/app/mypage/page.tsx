@@ -22,14 +22,14 @@ function Page() {
     const [idx, setIdx] = useState('내 레시피');
 
 
-    // if (!session) {
-    //     return <div className='isLogin'>
-    //     <h1>Hello!</h1>
-    //     <p>지금 로그인하고 다양한 서비스를 이용해보세요.</p>
-    //     <GoogleLogin />
-    //     <NaverLogin/>
-    //     </div>
-    // }
+    if (!session) {
+        return <div className='isLogin'>
+        <h1>Hello!</h1>
+        <p>지금 로그인하고 다양한 서비스를 이용해보세요.</p>
+        <GoogleLogin />
+        <NaverLogin/>
+        </div>
+    }
 
 
     let idxdata = (a: any) => {
@@ -40,7 +40,7 @@ function Page() {
 
 
 
-    // if (!session) return
+    if (!session) return
 
 
     return (
