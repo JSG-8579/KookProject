@@ -69,7 +69,7 @@ function FuncLike({ obj }: any) {
             setIsLike(false)
         }
         // setPluslike(like);
-    }, [])
+    }, [obj])
 
     // useEffect(() => {
     //     isLike ? setPluslike(pluslike + 1) : setPluslike(pluslike - 1);
