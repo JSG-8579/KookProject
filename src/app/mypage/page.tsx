@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import "@/components/style/mypage.scss";
 import { useStore } from '@/components/recipe_store/all_store';
 import { useStore4 } from '@/components/recipe_store/comment_store';
+import { useStore5 } from '@/components/recipe_store/like_store';
 import { useSession } from 'next-auth/react';
 import Profile from '@/components/UIUX/Profile';
 import MypageButton from '@/components/UIUX/MypageButton';
@@ -18,6 +19,7 @@ function Page() {
 
     let { data, dataCrl } = useStore();
     let { data4, dataCrl4 } = useStore4();
+    let { data5, dataCrl5 } = useStore5();
     const { data: session, status }: any = useSession();
     const [idx, setIdx] = useState('내 레시피');
 
@@ -46,7 +48,7 @@ function Page() {
     return (
         <div>
             <Profile session={session} />
-            <MypageButton idxdata={idxdata} session={session} dataCrl={dataCrl} dataCrl4={dataCrl4} />
+            <MypageButton idxdata={idxdata} session={session} dataCrl={dataCrl} dataCrl4={dataCrl4} dataCrl5={dataCrl5} />
             <Mypageview idx={idx} session={session} dataCrl={dataCrl} dataCrl4={dataCrl4} />
         </div>
     );

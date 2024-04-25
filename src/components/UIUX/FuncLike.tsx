@@ -62,7 +62,7 @@ function FuncLike({ obj }: any) {
     }
 
     useEffect(() => {
-        let like: any = Math.floor(obj.like);
+        // let like: any = Math.floor(obj.like);
         const checkBook = data5.filter(like=>(like.seq == obj.seq) && (like.user_id == session?.user.id))
         // if(session.user.email){
         // let aaaa = (checkBook[0].user_email == session.user.email)
