@@ -43,7 +43,7 @@ function Mypageview({ idx, session, dataCrl}: any) {
             break;
 
         case "좋아요 레시피":
-            comp = <Viewrecipe myLike={myLike} data={data}/>
+            comp = <Viewrecipe myLike={myLike} dataCrl5={dataCrl5}/>
             break;
 
 

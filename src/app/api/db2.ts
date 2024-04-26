@@ -4,12 +4,13 @@ const uri = process.env.MONGO_DB;
 const client = new MongoClient(uri)
 
 export const test2 = async (type?: string, body?: initTy2) => {
+    console.log(body,'=====body')
     await client.connect();
     
     let db, collection, data2
     db = client.db('Kookproject')
     collection = db.collection('bookmark')
-    console.log(body,'----')
+    
     
     
     switch (type) {

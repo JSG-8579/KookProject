@@ -9,7 +9,7 @@ export const test4 = async (type?: string, body?: initTy4) => {
     let db, collection, data4
     db = client.db('Kookproject')
     collection = db.collection('like')
-
+    console.log(body,'----')
     
     switch (type) {
         case "post":

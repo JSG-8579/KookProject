@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import FuncScrap from './FuncScrap';
 import FuncLike from './FuncLike';
 import { useRouter } from 'next/navigation';
 
 
-function Viewrecipe({ myLike, data}:any) {
-    console.log(myLike, '-----')
+
+function Viewrecipe({ myLike, dataCrl5}:any) {
+    // console.log(myLike, '-----')
 
 
     const router: any = useRouter();
@@ -15,6 +16,10 @@ function Viewrecipe({ myLike, data}:any) {
         let url: any = urlname[0].seq;
         router.push(`/home/${url}`);
     }
+
+    useEffect(() => {
+        dataCrl5('all', '', '')
+    }, [])
 
     
     if (myLike.length == 0) return <p className='noLike'>좋아요 레시피가 없습니다.</p>
