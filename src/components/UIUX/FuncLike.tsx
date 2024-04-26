@@ -26,6 +26,7 @@ function FuncLike({ obj }: any) {
 
         let Dateid = Date.now()
         let likeOne = obj;
+        let bbbbb = data5.filter((obj2:any)=>obj.seq == obj2.seq && obj2.user_id == session.user.id)
         
         
         if (!isLike) {
@@ -50,15 +51,15 @@ function FuncLike({ obj }: any) {
             // dataCrl5("put",likeOne.seq, putupLike)
             // dataCrl("put",likeOne.seq, putupLike)
         } else {
-            const ddd = {
-                'user_id': session.user.id,
-                'seq': bb.seq
-            }
+            // const ddd = {
+            //     'user_id': session.user.id,
+            //     'seq': bb.seq
+            // }
 
             // let putdownLike = {
             //     "like": Number(likeOne.like) - 1
             // }
-            dataCrl5("delete", ddd, '')
+            dataCrl5("delete", bbbbb[0].id, '')
             // dataCrl5("put", likeOne.seq, putdownLike)
             // dataCrl("put", likeOne.seq, putdownLike)
             

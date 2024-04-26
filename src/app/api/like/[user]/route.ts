@@ -11,8 +11,9 @@ export async function GET(req:Request, {params}:any){
 
 export async function DELETE(req:NextRequest, {params}:any){
     const user = req.nextUrl.searchParams.get('user')
-    const data4 = await test4('delete', {$and:[{seq:params.user},{user_id:user}]})
+    const data4 = await test4('delete', {id:params.user})
     return NextResponse.json(data4);
+    // $and:[{seq:params.user},{user_id:user}]
 }
 
 
