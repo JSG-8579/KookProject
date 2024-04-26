@@ -25,7 +25,7 @@ export const useStore2 = create<Ty2>((set) => {
                 case "insert": res2 = await request1.post("/api/bookmark", overData2);
                     break;
                    
-                case "delete": res2 = await request1.delete(`/api/bookmark/${id2.seq}?user=${id2.user_id}`);
+                case "delete": res2 = await request1.delete(`/api/bookmark/${id2}`);
                     break;
                     
                 case "put": res2 = await axios.put(`/api/bookmark/${id2}`, overData2);

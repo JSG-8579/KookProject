@@ -24,9 +24,9 @@ export const test2 = async (type?: string, body?: any) => {
                 
                 case "delete":
                     // data2 = await collection.deleteOne(body);
-                    data2 = await collection.deleteOne({$and:[{seq:'337'},{user_id:'112305745806653108481'}]});
+                    data2 = await collection.deleteOne(body);
                     break;
-                    
+                    // {$and:[{seq:'337'},{user_id:'112305745806653108481'}]}
             case 'put':
                 await collection.updateOne({seq:body?.seq}, {$set:body});
 

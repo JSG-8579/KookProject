@@ -10,8 +10,8 @@ export async function GET(req:Request, {params}:any){
 
 
 export async function DELETE(req:NextRequest, {params}:any){
-    const user = req.nextUrl.searchParams.get('user') ;
-    const data2 = await test2('delete', {seq:params.user, user_id:user})
+    // const user = req.nextUrl.searchParams.get('user') ;
+    const data2 = await test2('delete', {id:params.user})
     
     return NextResponse.json(data2);
 }
