@@ -1,5 +1,4 @@
 "use client";
-// import React, { useEffect } from 'react';
 import { useStore } from '../recipe_store/all_store';
 import RecipeWid from '../UIUX/RecipeWid';
 import RecipeSq from '../UIUX/RecipeSq';
@@ -7,7 +6,6 @@ import Home_detail from '../UIUX/Home_detail';
 import { useStore2 } from '../recipe_store/bookmark_store';
 import { useStore4 } from '../recipe_store/comment_store';
 import { useSession } from 'next-auth/react';
-// import Loading from '@/app/loading';
 import { useStore5 } from '../recipe_store/like_store';
 import recipe from "@/lib/recipe.json";
 
@@ -23,22 +21,6 @@ function RecipeList({idx,detailUrl,selectName,sortCate,setFameImg}:any) {
     let allData = recipe.filter((obj:any)=>obj.m_cate==sortCate);
     let likeData = recipe.sort((a:any, b:any) => a.like - b.like);
     let recipeSort = allData.slice(0,20);
-
-    // console.log(recipeSort,'----33')
-
-    // const userbook = data2.filter((user:any) => user.user_email == session.user.email)
-    
-    // useEffect(() => {
-    //     dataCrl2('all','','')
-    // }, [data2])
-    // useEffect(() => {
-    //     dataCrl4('all','','')
-    // }, [data4])
-    // useEffect(() => {
-    //     dataCrl5('all','','')
-    // }, [data5])
-
-    // if (!data.length) return <Loading/>; 
 
 
     let comp;

@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 
 
 function Viewrecipe({ myLike, dataCrl5}:any) {
-    // console.log(myLike, '-----')
 
 
     const router: any = useRouter();

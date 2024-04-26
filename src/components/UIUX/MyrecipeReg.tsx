@@ -40,14 +40,12 @@ function MyrecipeReg({ myRecipe,session,dataCrl }: any) {
             return imgUrl;
         },
         delImage: (id: any, urls: any) => {
-            console.log(urls, 'urls')
-
+            
             urls.forEach((url: any) => {
                 if (url) {
                     const start = url.lastIndexOf('%2F') + 3; //url 뒤 부터 %2f부분의 인덱스값 
                     const end = url.lastIndexOf('?');
                     const str = url.substring(start, end);
-                    console.log(str, 'str')
                     deleteObject(ref(storage, `/${session.user.id}/${id}/${str}`))
                 }
             })
@@ -58,7 +56,6 @@ function MyrecipeReg({ myRecipe,session,dataCrl }: any) {
 
     //삭제 버튼
     let delRecipe = () => {
-        console.log(eldelrecipe.current, 'sad')
 
         let vlfxj = myRecipe.filter((obj: any) => eldelrecipe.current == obj.seq)
         let selectRecipe = vlfxj[0].seq

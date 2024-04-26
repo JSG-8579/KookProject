@@ -4,7 +4,7 @@ const uri = process.env.MONGO_DB;
 const client = new MongoClient(uri)
 
 export const test2 = async (type?: string, body?: any) => {
-    console.log(body,'=====body')
+    
     await client.connect();
     
     let db, collection, data2

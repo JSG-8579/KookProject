@@ -8,7 +8,6 @@ import FuncScrap from './FuncScrap';
 
 
 function RecipeSq({ dataID, dataCrl }: any) {
-    console.log(dataID, '-----')
     const router: any = useRouter();
     const [list,setList] = useState<any>([]);
     const link = (name: any) => {
