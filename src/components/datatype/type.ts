@@ -19,16 +19,17 @@ export type initTy = {
 
 export type initTy2 = {
     id?:string;
-    seq?:number;
+    seq?:any;
     name?:string;
     user_name?:string;
     user_email?:string;
-    user_id?:string;
+    user_id?:any;
     m_thumb?:string;
     top?:string;
     like?:number;
     user?:string|null;
-    $and?:{seq?:string; user_id?:string|null}[];
+    // $and?:{seq?:string; user_id?:string|null}[];
+    
 
 }
 export type initTy3 = {

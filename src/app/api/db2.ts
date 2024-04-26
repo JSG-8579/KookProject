@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.MONGO_DB;
 const client = new MongoClient(uri)
 
-export const test2 = async (type?: string, body?: initTy2) => {
+export const test2 = async (type?: string, body?: any) => {
     console.log(body,'=====body')
     await client.connect();
     
@@ -24,7 +24,7 @@ export const test2 = async (type?: string, body?: initTy2) => {
                 
                 case "delete":
                     // data2 = await collection.deleteOne(body);
-                    data2 = await collection.deleteOne(body);
+                    data2 = await collection.deleteOne({$and:[{seq:body.seq},{user_id:body.user_id}]});
                     break;
                     
             case 'put':
